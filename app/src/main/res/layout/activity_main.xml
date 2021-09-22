@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/main_background_color"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="現在日時"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/dateJP_output"
+            android:text="@string/age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/sub_color"
+            android:textSize="17sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/date_output"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:textColor="@color/sub_color"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_size"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="size\n"
+                android:textSize="10sp"
+                android:textColor="#000000"
+                android:scaleType="centerInside"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:drawableTop="@drawable/baseline_accessibility_black_24"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_state"
+                android:onClick="onClick" />
+
+            <Button
+                android:id="@+id/bt_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="date\n"
+                android:textSize="10sp"
+                android:textColor="#000000"
+                android:scaleType="centerInside"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:drawableTop="@drawable/baseline_filter_1_black_24"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_state"
+                android:onClick="onClick" />
+
+            <Button
+                android:id="@+id/bt_addres"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:text="address\n"
+                android:textSize="10sp"
+                android:textColor="#000000"
+                android:scaleType="centerInside"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:drawableTop="@drawable/baseline_home_work_black_24"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_state"
+                android:onClick="onClick" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_car"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="car\n"
+                android:textSize="10sp"
+                android:textColor="#000000"
+                android:scaleType="centerInside"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:drawableTop="@drawable/baseline_directions_car_black_24"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_state"
+                android:onClick="onClick" />
+
+            <Button
+                android:id="@+id/bt_update"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="update\n"
+                android:textSize="10sp"
+                android:textColor="#000000"
+                android:scaleType="centerInside"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:drawableTop="@drawable/baseline_autorenew_black_24"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_state"
+                android:onClick="onClick" />
+
+            <Button
+                android:id="@+id/bt_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:text="pass\nword"
+                android:textSize="10sp"
+                android:textColor="#000000"
+                android:scaleType="centerInside"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:drawableTop="@drawable/baseline_lock_open_black_24"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_state"
+                android:onClick="onClick" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_subsc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="subsc\nription"
+                android:textSize="10sp"
+                android:textColor="#000000"
+                android:scaleType="centerInside"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:drawableTop="@drawable/baseline_monetization_on_black_24"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_state"
+                android:onClick="onClick" />
+
+            <Button
+                android:id="@+id/bt_wishlist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="wish\nlist"
+                android:textSize="10sp"
+                android:textColor="#000000"
+                android:scaleType="centerInside"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:drawableTop="@drawable/baseline_flag_black_24"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_state"
+                android:onClick="onClick" />
+
+            <Button
+                android:id="@+id/bt_memo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:text="memo\n"
+                android:textSize="10sp"
+                android:textColor="#000000"
+                android:scaleType="centerInside"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:drawableTop="@drawable/baseline_article_black_24"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_state"
+                android:onClick="onClick" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

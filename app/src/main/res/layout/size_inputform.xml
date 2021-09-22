@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_size_inputform"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="16dp"
+    android:gravity="center_vertical"
+    android:weightSum="1">
+
+    <ImageView
+        android:id="@+id/circle"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_weight="0.1"
+        android:gravity="right"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/baseline_circle_black_24"
+        app:tint="#7fffd4" />
+
+
+    <EditText
+        android:id="@+id/et_bodypart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:hint="身長"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:text=""
+        app:theme="@style/EditTextStyle" />
+
+    <EditText
+        android:id="@+id/et_record"
+        android:layout_width="0dp"
+        android:hint="160"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:inputType="numberDecimal"
+        android:gravity="center"
+        android:text=""
+        app:theme="@style/EditTextStyle"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/edittext_shape" />
+
+    <EditText
+        android:id="@+id/et_unit"
+        android:layout_width="0dp"
+        android:hint="cm"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:text=""
+        app:theme="@style/EditTextStyle" />
+
+    <ImageButton
+        android:id="@+id/bt_delete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:adjustViewBounds="true"
+        android:src="@drawable/baseline_delete_forever_black_24"
+        android:scaleType="centerCrop"
+        android:background="@drawable/button_state"
+        android:paddingBottom="0dp"
+        android:paddingTop="0dp" />
+
+
+</LinearLayout>

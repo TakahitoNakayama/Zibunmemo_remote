@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/ll_subsc_inputform"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_subsc_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/edittext_shape">
+
+        <LinearLayout
+            android:id="@+id/ll_subsc_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:weightSum="10">
+
+            <EditText
+                android:id="@+id/et_subsc_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:text=""
+                app:theme="@style/EditTextStyle"
+                android:hint="定額動画配信" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="" />
+
+            <ImageButton
+                android:id="@+id/bt_delete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@drawable/baseline_delete_forever_black_241"
+                android:scaleType="centerInside"
+                android:background="@drawable/button_state" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_subsc_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="2"
+                android:text="支払間隔"
+                android:textColor="@color/text_color" />
+
+            <Spinner
+                android:id="@+id/sp_payment_interbal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.3"
+                android:paddingLeft="16dp"
+                android:paddingRight="0dp"
+                android:layout_marginRight="30dp"
+                android:background="@android:drawable/spinner_dropdown_background"
+                app:backgroundTint="@color/spinner_background_color"
+                android:entries="@array/subsc_items" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="支払金額"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:textColor="@color/sub_color"
+                android:text="￥" />
+
+            <EditText
+                android:id="@+id/et_subsc_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:inputType="number"
+                app:theme="@style/EditTextStyle"
+                android:hint="1000" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:text="" />
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">じぶんメモ</string>
+    <string name="height">身長</string>
+    <string name="weight">体重</string>
+    <string name="age">令和3年</string>
+    <string-array name="subsc_items">
+        <item>毎月</item>
+        <item>2ヶ月</item>
+        <item>3ヶ月</item>
+        <item>4ヶ月</item>
+        <item>半年</item>
+        <item>1年</item>
+        <item>2年</item>
+    </string-array>
+
+</resources>

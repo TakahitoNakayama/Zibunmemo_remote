@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/ll_update_inputform"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_update_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/edittext_shape">
+
+
+        <EditText
+            android:id="@+id/et_update_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:theme="@style/EditTextStyle"
+            android:hint="免許証の更新期限" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_update_deadline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.3" />
+
+            <EditText
+                android:id="@+id/et_update_year"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:hint="西暦"
+                app:theme="@style/EditTextStyle"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/sub_color"
+                android:text="年" />
+
+            <EditText
+                android:id="@+id/et_update_month"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:gravity="center"
+                app:theme="@style/EditTextStyle"
+                android:inputType="date" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/sub_color"
+                android:text="月" />
+
+            <EditText
+                android:id="@+id/et_update_day"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:gravity="center"
+                app:theme="@style/EditTextStyle"
+                android:inputType="date" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:textColor="@color/sub_color"
+                android:text="日" />
+
+            <ImageButton
+                android:id="@+id/bt_date_select"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:src="@drawable/baseline_date_range_black_24"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:background="@drawable/button_state"
+                android:layout_marginRight="29dp"
+                android:onClick="showDatePickerDialog" />
+
+            <ImageButton
+                android:id="@+id/bt_delete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.3"
+                android:adjustViewBounds="true"
+                android:src="@drawable/baseline_delete_forever_black_241"
+                android:scaleType="centerInside"
+                android:background="@drawable/button_state" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:text="" />
+
+</LinearLayout>

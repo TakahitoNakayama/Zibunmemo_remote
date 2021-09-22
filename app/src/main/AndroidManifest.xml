@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.websarva.wings.android.dowasurememo">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="じぶんメモ"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Dowasurememo">
+        <activity
+            android:name=".MemoMemo"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".WishlistMemo"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".SubscMemo"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".PasswordMemo"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".UpdateMemo"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".CarMemo"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".AddressMemo"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".DateMemo"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".SizeMemo"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

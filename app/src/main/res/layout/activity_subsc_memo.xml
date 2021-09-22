@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#DCDCDC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:gravity="center_vertical"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4.5"
+            android:gravity="center"
+            android:text="1ヶ月当たりの\n支払合計額"
+            android:textColor="@color/black"
+            android:textSize="17dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="￥"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_month_payment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:text="" />
+
+        <Button
+            android:id="@+id/bt_subsc_culc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            app:backgroundTint="#20b2aa"
+            android:text="計算" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/under_bar"
+        android:layout_width="500dp"
+        android:layout_height="5dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="@drawable/baseline_horizontal_rule_black_48"
+        app:tint="#7fffd4" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:background="#DCDCDC">
+
+        <LinearLayout
+            android:id="@+id/ll_subsc_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp">
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
