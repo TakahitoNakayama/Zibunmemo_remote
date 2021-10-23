@@ -13,14 +13,35 @@
         android:orientation="vertical"
         android:background="@drawable/edittext_shape">
 
-
-        <EditText
-            android:id="@+id/et_address_title"
+        <LinearLayout
+            android:id="@+id/ll_address_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
-            app:theme="@style/EditTextStyle"
-            android:hint="実家の住所" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:weightSum="10">
+
+
+            <EditText
+                android:id="@+id/et_address_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8.8"
+                android:text=""
+                app:theme="@style/EditTextStyle"
+                android:hint="実家の住所" />
+
+            <ImageButton
+                android:id="@+id/bt_delete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:adjustViewBounds="true"
+                android:src="@drawable/baseline_delete_forever_black_241"
+                android:scaleType="centerInside"
+                android:background="@drawable/button_state" />
+
+        </LinearLayout>
 
 
         <LinearLayout
@@ -61,23 +82,24 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="0.8"
                 android:text="" />
 
-            <ImageButton
-                android:id="@+id/bt_delete"
+            <Button
+                android:id="@+id/bt_postnumber_search"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.2"
-                android:adjustViewBounds="true"
-                android:src="@drawable/baseline_delete_forever_black_241"
-                android:scaleType="centerInside"
+                android:layout_height="35dp"
+                android:layout_weight="2.7"
+                android:text="住所取得"
+                android:paddingTop="0dp"
+                android:backgroundTint="#5f9ea0"
+                android:textColor="@color/white"
                 android:background="@drawable/button_state" />
 
         </LinearLayout>
 
         <EditText
-            android:id="@+id/et_addres_detail"
+            android:id="@+id/et_address_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""

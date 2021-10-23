@@ -35,7 +35,7 @@
             android:layout_marginBottom="16dp" />
 
         <TextView
-            android:id="@+id/date_output"
+            android:id="@+id/dateOutput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17dp"
