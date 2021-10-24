@@ -28,7 +28,7 @@ https://play.google.com/store/apps/details?id=com.websarva.wings.android.zibunme
 ・日付入力の際にカレンダーによる日付選択補助機能  
 ・メモしたサブスクリプションサービスの毎月支払い合計額の算出  
 ・メモしたパスワードをワンタッチでクリップボードにコピー  
-・郵便番号検索APIを使用して、郵便番号から住所を取得（Addressmemo.ktに記載）
+・郵便番号検索APIを使用して、郵便番号から住所を取得（Addressmemo.ktに記載）  
 ・Http接続は非同期で処理（Addressmemo.ktに記載）
 
 ## 利用方法
