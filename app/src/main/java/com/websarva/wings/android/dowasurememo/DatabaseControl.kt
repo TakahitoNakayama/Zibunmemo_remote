@@ -27,8 +27,6 @@ class DatabaseControl {
     private var str2: String? = null
     private var str3: String? = null
     private var str4: String? = null
-    private var llAddLayout: LinearLayout? = null
-    private var inflater: LayoutInflater? = null
 
     private lateinit var manager: FragmentManager
     private lateinit var cm: ClipboardManager
@@ -245,11 +243,8 @@ class DatabaseControl {
         for (index in columnNames.indices) {
             val i = cursor.getColumnIndex("${columnNames[index]}")
             var str = cursor.getString(i)
-            try {
-                editTexts[index].setText(str)
-            } catch (e: NullPointerException) {
-                str = ""
-            }
+            editTexts[index].setText(str)
+
         }
     }
 
@@ -271,12 +266,8 @@ class DatabaseControl {
                 spinner.setSelection(intSpinnerIndex)
             } else {
                 var str = cursor.getString(i)
-                try {
-                    val editText = views[index] as EditText
-                    editText.setText(str)
-                } catch (e: NullPointerException) {
-                    str = ""
-                }
+                val editText = views[index] as EditText
+                editText.setText(str)
             }
         }
     }
@@ -290,13 +281,13 @@ class DatabaseControl {
      * @return EditTextの配列
      */
     private fun setViewIdSize(context: Context, table: String, llBaseLayout: LinearLayout): List<EditText> {
-        inflater = LayoutInflater.from(context)
-        llAddLayout = inflater?.inflate(R.layout.size_inputform, null) as LinearLayout
+        val inflater = LayoutInflater.from(context)
+        val llAddLayout = inflater.inflate(R.layout.size_inputform, null) as LinearLayout
         llBaseLayout.addView(llAddLayout)
-        val etBodyPart = llAddLayout!!.findViewById<EditText>(R.id.et_bodypart)
-        val etRecord = llAddLayout!!.findViewById<EditText>(R.id.et_record)
-        val etUnit = llAddLayout!!.findViewById<EditText>(R.id.et_unit)
-        val btDelete = llAddLayout!!.findViewById<ImageButton>(R.id.bt_delete)
+        val etBodyPart = llAddLayout.findViewById<EditText>(R.id.et_bodypart)
+        val etRecord = llAddLayout.findViewById<EditText>(R.id.et_record)
+        val etUnit = llAddLayout.findViewById<EditText>(R.id.et_unit)
+        val btDelete = llAddLayout.findViewById<ImageButton>(R.id.bt_delete)
         btDelete.setOnClickListener(DeleteButton(context, llBaseLayout, llAddLayout, table))
         return listOf(etBodyPart, etRecord, etUnit)
     }
@@ -311,11 +302,11 @@ class DatabaseControl {
      * @return EditTextの配列
      */
     private fun setViewIdDate(context: Context, table: String, llBaseLayout: LinearLayout, manager: FragmentManager): List<EditText> {
-        inflater = LayoutInflater.from(context)
-        llAddLayout = inflater?.inflate(R.layout.date_inputform, null) as LinearLayout
+        val inflater = LayoutInflater.from(context)
+        val llAddLayout = inflater.inflate(R.layout.date_inputform, null) as LinearLayout
         llBaseLayout.addView(llAddLayout)
-        val llDateTitle = llAddLayout!!.findViewById<LinearLayout>(R.id.ll_date_title)
-        val llDateSelect = llAddLayout!!.findViewById<LinearLayout>(R.id.ll_date_select)
+        val llDateTitle = llAddLayout.findViewById<LinearLayout>(R.id.ll_date_title)
+        val llDateSelect = llAddLayout.findViewById<LinearLayout>(R.id.ll_date_select)
         val etDateTitle = llDateTitle.findViewById<EditText>(R.id.et_date_title)
         val etDateYear = llDateSelect.findViewById<EditText>(R.id.et_date_year)
         val etDateMonth = llDateSelect.findViewById<EditText>(R.id.et_date_month)
@@ -336,16 +327,17 @@ class DatabaseControl {
      * @return EditTextの配列
      */
     private fun setViewIdAddress(context: Context, table: String, llBaseLayout: LinearLayout): List<EditText> {
-        inflater = LayoutInflater.from(context)
-        llAddLayout = inflater?.inflate(R.layout.address_inputform, null) as LinearLayout
+        val inflater = LayoutInflater.from(context)
+        val llAddLayout = inflater.inflate(R.layout.address_inputform, null) as LinearLayout
         llBaseLayout.addView(llAddLayout)
-        val llAddressFrame = llAddLayout!!.findViewById<LinearLayout>(R.id.ll_address_frame)
-        val llPostNumberinputform = llAddLayout!!.findViewById<LinearLayout>(R.id.ll_postnumber_inputform)
-        val etAddressTitle = llAddressFrame.findViewById<EditText>(R.id.et_address_title)
+        val llAddressFrame = llAddLayout.findViewById<LinearLayout>(R.id.ll_address_frame)
+        val llPostNumberinputform = llAddressFrame.findViewById<LinearLayout>(R.id.ll_postnumber_inputform)
+        val llAddressTitle = llAddressFrame.findViewById<LinearLayout>(R.id.ll_address_title)
+        val etAddressTitle = llAddressTitle.findViewById<EditText>(R.id.et_address_title)
         val etPostNumber1 = llPostNumberinputform.findViewById<EditText>(R.id.et_postnumber1)
         val etPostNumber2 = llPostNumberinputform.findViewById<EditText>(R.id.et_postnumber2)
         val etAddressDetail = llAddressFrame.findViewById<EditText>(R.id.et_address_detail)
-        val llAddressTitle = llAddressFrame.findViewById<LinearLayout>(R.id.ll_address_title)
+
         val btDelete = llAddressTitle.findViewById<ImageButton>(R.id.bt_delete)
         btDelete.setOnClickListener(DeleteButton(context, llBaseLayout, llAddLayout, table))
         val btPostNumberSearch = llPostNumberinputform.findViewById<Button>(R.id.bt_postnumber_search)
@@ -366,15 +358,15 @@ class DatabaseControl {
      * @return EditTextの配列
      */
     private fun setViewIdCarName(context: Context, table: String, llBaseLayout: LinearLayout): List<EditText> {
-        inflater = LayoutInflater.from(context)
-        llAddLayout = inflater?.inflate(R.layout.car_name_inputform, null) as LinearLayout
+        val inflater = LayoutInflater.from(context)
+        val llAddLayout = inflater.inflate(R.layout.car_name_inputform, null) as LinearLayout
         llBaseLayout.addView(llAddLayout)
-        val etCarName = llAddLayout!!.findViewById<EditText>(R.id.et_car_name)
-        val btDelete = llAddLayout!!.findViewById<ImageButton>(R.id.bt_delete)
+        val etCarName = llAddLayout.findViewById<EditText>(R.id.et_car_name)
+        val btDelete = llAddLayout.findViewById<ImageButton>(R.id.bt_delete)
         btDelete.setOnClickListener(DeleteButton(context, llBaseLayout, llAddLayout, table))
 
         //viewの追加ボタンにリスナーをセット
-        val btCarDetailAdd = llAddLayout!!.findViewById<ImageButton>(R.id.bt_cardetail_add)
+        val btCarDetailAdd = llAddLayout.findViewById<ImageButton>(R.id.bt_cardetail_add)
         btCarDetailAdd.setOnClickListener(AddCarDetail(context, llBaseLayout))
         return listOf(etCarName)
     }
@@ -388,12 +380,12 @@ class DatabaseControl {
      * @return EditTextの配列
      */
     private fun setViewIdCarDetail(context: Context, table: String, llBaseLayout: LinearLayout): List<EditText> {
-        inflater = LayoutInflater.from(context)
-        llAddLayout = inflater?.inflate(R.layout.car_detail_inputform, null) as LinearLayout
+        val inflater = LayoutInflater.from(context)
+        val llAddLayout = inflater.inflate(R.layout.car_detail_inputform, null) as LinearLayout
         llBaseLayout.addView(llAddLayout)
-        val etCarMemoTitle = llAddLayout!!.findViewById<EditText>(R.id.et_car_memo_title)
-        val etCarMemoContents = llAddLayout!!.findViewById<EditText>(R.id.et_car_memo_contents)
-        val btDelete = llAddLayout!!.findViewById<ImageButton>(R.id.bt_delete)
+        val etCarMemoTitle = llAddLayout.findViewById<EditText>(R.id.et_car_memo_title)
+        val etCarMemoContents = llAddLayout.findViewById<EditText>(R.id.et_car_memo_contents)
+        val btDelete = llAddLayout.findViewById<ImageButton>(R.id.bt_delete)
         btDelete.setOnClickListener(DeleteButton(context, llBaseLayout, llAddLayout, table))
         return listOf(etCarMemoTitle, etCarMemoContents)
     }
@@ -408,10 +400,10 @@ class DatabaseControl {
      * @return EditTextの配列
      */
     private fun setViewIdUpdate(context: Context, table: String, llBaseLayout: LinearLayout, manager: FragmentManager): List<EditText> {
-        inflater = LayoutInflater.from(context)
-        llAddLayout = inflater?.inflate(R.layout.update_inputform, null) as LinearLayout
+        val inflater = LayoutInflater.from(context)
+        val llAddLayout = inflater.inflate(R.layout.update_inputform, null) as LinearLayout
         llBaseLayout.addView(llAddLayout)
-        val llUpdateTitle = llAddLayout!!.findViewById<LinearLayout>(R.id.ll_update_title)
+        val llUpdateTitle = llAddLayout.findViewById<LinearLayout>(R.id.ll_update_title)
         val llUpdateDeadline = llUpdateTitle.findViewById<LinearLayout>(R.id.ll_update_deadline)
         val etUpdateTitle = llUpdateTitle.findViewById<EditText>(R.id.et_update_title)
         val etUpdateYear = llUpdateDeadline.findViewById<EditText>(R.id.et_update_year)
@@ -434,10 +426,10 @@ class DatabaseControl {
      * @return EditTextの配列
      */
     private fun setViewIdPassword(context: Context, table: String, llBaseLayout: LinearLayout, cm: ClipboardManager): List<EditText> {
-        inflater = LayoutInflater.from(context)
-        llAddLayout = inflater?.inflate(R.layout.password_inputform, null) as LinearLayout
+        val inflater = LayoutInflater.from(context)
+        val llAddLayout = inflater.inflate(R.layout.password_inputform, null) as LinearLayout
         llBaseLayout.addView(llAddLayout)
-        val llPasswordFrame = llAddLayout!!.findViewById<LinearLayout>(R.id.ll_password_frame)
+        val llPasswordFrame = llAddLayout.findViewById<LinearLayout>(R.id.ll_password_frame)
         val llPasswordTitle = llPasswordFrame.findViewById<LinearLayout>(R.id.ll_password_title)
         val llPasswordContents = llPasswordFrame.findViewById<LinearLayout>(R.id.ll_password_contents)
         val etPasswordTitle = llPasswordTitle.findViewById<EditText>(R.id.et_password_title)
@@ -458,10 +450,10 @@ class DatabaseControl {
      * @return viewの配列
      */
     private fun setViewIdSubsc(context: Context, table: String, llBaseLayout: LinearLayout): List<View> {
-        inflater = LayoutInflater.from(context)
-        llAddLayout = inflater?.inflate(R.layout.subsc_inputform, null) as LinearLayout
+        val inflater = LayoutInflater.from(context)
+        val llAddLayout = inflater.inflate(R.layout.subsc_inputform, null) as LinearLayout
         llBaseLayout.addView(llAddLayout)
-        val llSubscFrame = llAddLayout!!.findViewById<LinearLayout>(R.id.ll_subsc_frame)
+        val llSubscFrame = llAddLayout.findViewById<LinearLayout>(R.id.ll_subsc_frame)
         val llSubscTitle = llSubscFrame.findViewById<LinearLayout>(R.id.ll_subsc_title)
         val llSubscPrice = llSubscFrame.findViewById<LinearLayout>(R.id.ll_subsc_price)
         val etSubscTitle = llSubscTitle.findViewById<EditText>(R.id.et_subsc_title)
@@ -481,10 +473,10 @@ class DatabaseControl {
      * @return EditTextの配列
      */
     private fun setViewIdWishlist(context: Context, table: String, llBaseLayout: LinearLayout): List<EditText> {
-        inflater = LayoutInflater.from(context)
-        llAddLayout = inflater?.inflate(R.layout.wishlist_inputform, null) as LinearLayout
+        val inflater = LayoutInflater.from(context)
+        val llAddLayout = inflater.inflate(R.layout.wishlist_inputform, null) as LinearLayout
         llBaseLayout.addView(llAddLayout)
-        val llWishlistTitle = llAddLayout!!.findViewById<LinearLayout>(R.id.ll_wishlist_title)
+        val llWishlistTitle = llAddLayout.findViewById<LinearLayout>(R.id.ll_wishlist_title)
         val etWishlistTitle = llWishlistTitle.findViewById<EditText>(R.id.et_wishlist_title)
         val btDelete = llWishlistTitle.findViewById<ImageButton>(R.id.bt_delete)
         btDelete.setOnClickListener(DeleteButton(context, llBaseLayout, llAddLayout, table))
@@ -500,10 +492,10 @@ class DatabaseControl {
      * @return EditTextの配列
      */
     private fun setViewIdMemo(context: Context, table: String, llBaseLayout: LinearLayout): List<EditText> {
-        inflater = LayoutInflater.from(context)
-        llAddLayout = inflater?.inflate(R.layout.memo_inputform, null) as LinearLayout
+        val inflater = LayoutInflater.from(context)
+        val llAddLayout = inflater.inflate(R.layout.memo_inputform, null) as LinearLayout
         llBaseLayout.addView(llAddLayout)
-        val llMemoFrame = llAddLayout!!.findViewById<LinearLayout>(R.id.ll_memo_frame)
+        val llMemoFrame = llAddLayout.findViewById<LinearLayout>(R.id.ll_memo_frame)
         val llMemoTitle = llMemoFrame.findViewById<LinearLayout>(R.id.ll_memo_title)
         val etMemoTitle = llMemoTitle.findViewById<EditText>(R.id.et_memo_title)
         val etMemoContents = llMemoFrame.findViewById<EditText>(R.id.et_memo_contents)
