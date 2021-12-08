@@ -30,6 +30,8 @@ import okhttp3.Request
 
 //pullをやってみたい
 
+//edittextブランチの作業
+
 /**
  * 住所を入力するAddressメモのクラス
  *
