@@ -19,6 +19,10 @@ import kotlinx.coroutines.launch
 import okhttp3.OkHttpClient
 import okhttp3.Request
 
+
+//コメントを追加
+
+
 /**
  * 住所を入力するAddressメモのクラス
  *
